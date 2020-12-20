@@ -20,3 +20,5 @@
 [Using pyenv to install and manage multiple python version](https://anil.io/blog/python/pyenv/using-pyenv-to-install-multiple-python-versions-tox/)
 
 [tox automation project](https://pypi.org/project/tox/)
+
+[tox documentation](https://tox.readthedocs.io/en/latest/)
