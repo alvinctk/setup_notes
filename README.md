@@ -26,6 +26,45 @@
 
 ## PostgreSQL setup 
 
+The process is a lot easier to install `postgresql`.
+
+0. Update homebrew 
+```bash
+brew doctor
+brew update
+```
+1. Install postgresql 
+```bash
+brew install postgresql
+````
+
+2. Install `brew services`
+```bash
+brew tap homebrew/services
+```
+3. Other commands
+
+3a. Start postgresql:
+```bash
+brew services start postgresql
+```
+
+3b. Stop postgresql: 
+```bash
+brew services stop postgresql 
+```
+
+3c. Display running background services
+```bash
+brew services list
+```
+
+
+
+
+
+
+
 [Postgresql installation on macOS](https://www.robinwieruch.de/postgres-sql-macos-setup)
 
 [Starting and Stopping Background Services with Homebrew](https://thoughtbot.com/blog/starting-and-stopping-background-services-with-homebrew)
