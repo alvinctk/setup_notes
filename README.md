@@ -1,4 +1,63 @@
+<script>
+function CopyToClipboard(containerid) {
+    if (window.getSelection) {
+        if (window.getSelection().empty) { // Chrome
+            window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) { // Firefox
+            window.getSelection().removeAllRanges();
+        }
+    } else if (document.selection) { // IE?
+        document.selection.empty();
+    }
+
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("copy");
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+    }
+}
+</script>
+
 # setup_notes
+The setup notes, served as a personal reference for myself, describes how I setup my developer environment on macOS big
+Sur. 
+
+
+**Contributing**: If you find any mistakes in the steps describe below, or if any
+of the commands are outdated, do let me know. 
+
+## CLI - Command Line Developer Tools for Xcode
+
+Important dependency before Homebrew can work is the **Command Line Developer
+Tools** for Xcode. These includes compilers that will allow you to build things
+from source. Install CLI directly on the terminal:
+
+```bash
+xcode-select install
+```
+
+## Homebrew 
+
+Once CLI is installed, we can install Homebrew. [Homebrew](https://brew.sh) is
+the missing package manager for macOS (or Linux). 
+
+
+Paste the following in a macOS Terminal or Linux shell prompt. 
+<div id="copyable", onclick="CopyToClickboard()">
+```bash
+/bin/bash -c "$(curl -fsSL
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+</div>
+
+
+
 
 
 ## git setup
@@ -17,11 +76,50 @@
 
 ## python setup 
 
+Install `pyenv` via Homebrew by running:
+
+```bash
+brew install pyenv
+```
+
+When finished, Open your .bash_profile in the home directory (you can use code ~/.bash_profile), an add the following line to `~/.bash_profile`:
+
+
+
 [Using pyenv to install and manage multiple python version](https://anil.io/blog/python/pyenv/using-pyenv-to-install-multiple-python-versions-tox/)
 
 [tox automation project](https://pypi.org/project/tox/)
 
 [tox documentation](https://tox.readthedocs.io/en/latest/)
+
+
+### pip install fails for every package
+
+Error: 
+
+`pip install <package name>` is failing for every package for me. This is what I get:
+
+```
+Could not find a version that satisfies the requirement <package-name>
+```
+Fix: 
+
+
+Upgrade pip as follows:
+```bash
+curl https://bootstrap.pypa.io/get-pip.py | python
+```
+
+Note: You may need to use sudo python above if not in a virtual environment.
+
+
+Lastly, to avoid other install errors, make sure you also upgrade setuptools after doing the above:
+
+```bash
+pip install --upgrade setuptools
+```
+
+Further reads from [source](https://stackoverflow.com/questions/49748063/pip-install-fails-for-every-package-could-not-find-a-version-that-satisfies/49748494#49748494)
 
 
 ## PostgreSQL setup 
