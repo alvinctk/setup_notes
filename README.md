@@ -157,12 +157,8 @@ brew services stop postgresql
 brew services list
 ```
 
-
-
-
-
-
-
 [Postgresql installation on macOS](https://www.robinwieruch.de/postgres-sql-macos-setup)
 
 [Starting and Stopping Background Services with Homebrew](https://thoughtbot.com/blog/starting-and-stopping-background-services-with-homebrew)
+
+[Installing Postgres via Brew](https://gist.github.com/sgnl/609557ebacd3378f3b72)
