@@ -1,10 +1,35 @@
+<script>
+function CopyToClipboard(containerid) {
+    if (window.getSelection) {
+        if (window.getSelection().empty) { // Chrome
+            window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) { // Firefox
+            window.getSelection().removeAllRanges();
+        }
+    } else if (document.selection) { // IE?
+        document.selection.empty();
+    }
+
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("copy");
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+    }
+}
+</script>
+
 # setup_notes
 The setup notes, served as a personal reference for myself, describes how I setup my developer environment on macOS big
 Sur. 
 
-This document desribes how I sestup my developer environment on macOS Big Sur. 
 
-Contributing: If you find any mistakes in the steps describe below, or if any
+**Contributing**: If you find any mistakes in the steps describe below, or if any
 of the commands are outdated, do let me know. 
 
 ## CLI - Command Line Developer Tools for Xcode
@@ -24,10 +49,12 @@ the missing package manager for macOS (or Linux).
 
 
 Paste the following in a macOS Terminal or Linux shell prompt. 
+<div id="copyable", onclick="CopyToClickboard()">
 ```bash
 /bin/bash -c "$(curl -fsSL
 https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+</div>
 
 
 
