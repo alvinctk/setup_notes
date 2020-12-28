@@ -75,10 +75,10 @@ Check if pip is already installed:
 ```bash
 python -m pip --version 
 ```
-To
 
 ### pip install fails for every package
 According to [stackoverflow post](https://stackoverflow.com/questions/49748063/pip-install-fails-for-every-package-could-not-find-a-version-that-satisfies/49748494#49748494)
+
 Error: 
 
 `pip install <package name>` is failing for every package for me. This is what I get:
