@@ -57,6 +57,8 @@ brew install pyenv
 
 When finished, Open your .bash_profile in the home directory (you can use code ~/.bash_profile), an add the following line to `~/.bash_profile`:
 
+[virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
+
 
 
 [Using pyenv to install and manage multiple python version](https://anil.io/blog/python/pyenv/using-pyenv-to-install-multiple-python-versions-tox/)
@@ -65,15 +67,25 @@ When finished, Open your .bash_profile in the home directory (you can use code ~
 
 [tox documentation](https://tox.readthedocs.io/en/latest/)
 
+### pip 
+According to [pip manual](https://pip.pypa.io/en/stable/installing/#install-pip), pip is already installed if you are using Python 2 >=2.7.9 or PYthon 3 >= 3.4 downloaded from [python.org](python.org) or if you are working in a virtual environment created by virtualenv or venv. Just make sure to upgrade pip. 
+
+
+Check if pip is already installed: 
+```bash
+python -m pip --version 
+```
+To
 
 ### pip install fails for every package
-
+According to [stackoverflow post](https://stackoverflow.com/questions/49748063/pip-install-fails-for-every-package-could-not-find-a-version-that-satisfies/49748494#49748494)
 Error: 
 
 `pip install <package name>` is failing for every package for me. This is what I get:
 
 ```
 Could not find a version that satisfies the requirement <package-name>
+Not matching distribution found for <package-name>
 ```
 Fix: 
 
@@ -82,6 +94,8 @@ Upgrade pip as follows:
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py | python
 ```
+
+The detailed description can be found in the [link](https://bhch.github.io/posts/2017/04/fix-the-pip-error-couldnt-find-a-version-that-satisfies-the-requirement/) shared by Anupam in the comments.
 
 Note: You may need to use sudo python above if not in a virtual environment.
 
@@ -92,7 +106,6 @@ Lastly, to avoid other install errors, make sure you also upgrade setuptools aft
 pip install --upgrade setuptools
 ```
 
-Further reads from [source](https://stackoverflow.com/questions/49748063/pip-install-fails-for-every-package-could-not-find-a-version-that-satisfies/49748494#49748494)
 
 
 ## PostgreSQL setup 
