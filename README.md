@@ -87,7 +87,20 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 - **Ubuntu and Fedora note**: Modify your `~/.bashrc` file instead of `~/.bash_profile`
 
 **General warning**: There are some systems where the `BASH_ENV` variable is configured to point to `.bashrc`. On such systems you should almost certainly put the above mentioned line eval "$(pyenv init -)" into .bash_profile, and not into .bashrc. Otherwise you may observe strange behaviour, such as pyenv getting into an infinite loop. See [#264](https://github.com/pyenv/pyenv/issues/264) for details.
-When finished, Open your `.bash_profile` in the home directory (you can use code `~/.bash_profile`), an add the following line to `~/.bash_profile`:
+
+4. Restart your shell so the path changes take effect. You can now begin using pyenv
+```bash
+exec "$SHELL"
+```
+
+5. Install [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) before attempting to install a new Python
+   version.
+
+```bash
+# optional, but recommended:
+brew install openssl readline sqlite3 xz zlib
+```
+.
 
 [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
 
