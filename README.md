@@ -53,8 +53,7 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 `pyenv` stands for Python environment. `pyenv` lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
 
-
-Install `pyenv` via Homebrew by running:
+1. Install `pyenv` via Homebrew by running:
 
 ```bash
 brew install pyenv
@@ -83,9 +82,9 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 ```bash
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 ```
-**Zsh note**: Modify your `~/.zshrc` file instead of `~/.bash_profile`.
-**fish note**: Use `pyenv init - | source` instead of `eval (pyenv init -)`.
-**Ubuntu and Fedora note**: Modify your `~/.bashrc` file instead of `~/.bash_profile`
+- **Zsh note**: Modify your `~/.zshrc` file instead of `~/.bash_profile`.
+- **fish note**: Use `pyenv init - | source` instead of `eval (pyenv init -)`.
+- **Ubuntu and Fedora note**: Modify your `~/.bashrc` file instead of `~/.bash_profile`
 
 **General warning**: There are some systems where the `BASH_ENV` variable is configured to point to `.bashrc`. On such systems you should almost certainly put the above mentioned line eval "$(pyenv init -)" into .bash_profile, and not into .bashrc. Otherwise you may observe strange behaviour, such as pyenv getting into an infinite loop. See [#264](https://github.com/pyenv/pyenv/issues/264) for details.
 When finished, Open your `.bash_profile` in the home directory (you can use code `~/.bash_profile`), an add the following line to `~/.bash_profile`:
