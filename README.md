@@ -48,8 +48,16 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 4. [Using SSH authentication on terminal](https://gist.github.com/ddeveloperr/1859fd395e7cb5832c59)
 
 ## python setup 
+This python setup guide use in part of the following:
+    - [A gist about python_environment.md](https://gist.github.com/wronk/a902185f5f8ed018263d828e1027009b#using-the-workflow)
+    - [Homebrew Documentation on Python](https://docs.brew.sh/Homebrew-and-Python)
+    - [Using pyenv to install and manage multiple python version](https://anil.io/blog/python/pyenv/using-pyenv-to-install-multiple-python-versions-tox/)
+    - [tox automation project](https://pypi.org/project/tox/)
+    - [tox documentation](https://tox.readthedocs.io/en/latest/)
+
 
 Follow the order of steps in order to setup Python.
+
 
 ### Python build dependencies
 
@@ -126,12 +134,6 @@ pyenv versions # List all Python versions installed
 [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
 
 
-
-[Using pyenv to install and manage multiple python version](https://anil.io/blog/python/pyenv/using-pyenv-to-install-multiple-python-versions-tox/)
-
-[tox automation project](https://pypi.org/project/tox/)
-
-[tox documentation](https://tox.readthedocs.io/en/latest/)
 
 ### pip 
 According to [pip manual](https://pip.pypa.io/en/stable/installing/#install-pip), pip is already installed if you are using Python 2 >=2.7.9 or PYthon 3 >= 3.4 downloaded from [python.org](python.org) or if you are working in a virtual environment created by virtualenv or venv. Just make sure to upgrade pip. 
