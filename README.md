@@ -289,17 +289,22 @@ For example, `pipx install pycowsay` makes the `pycowsay` command available glob
 
 ## Setup Python Virtual Environment Settings
 
-### virtualenv
+### [`virtualenv`](https://virtualenv.pypa.io/en/stable/)
 Short for "virtual environment." This manages separate directories for the modules you install (e.g., with `pip`). That way, each virtual environment can have it's own set of installed modules that is walled off from every other virtual environment so they don't interfere with each other. Like with `pyenv`, we'll switch virtual environments with virtualenvwrapper's `workon` command (as described later).
+
+
 
 Install virtualenv. if no `pipx`, try `pip install virtualenv`
 ```bash
 pipx install virtualenv
 ```
 
+**Technical details:** `virtualenv` keeps each environment (and its installed modules) in separate folders; therefore, each is like a silo that doesn't interact with any other virtual environment. Usually, the exact file location is defined by the user, but we can use virtualenvwrapper to instead handle this for us.
+
 ### pyenv plugin to manage virtual environment 
 `pyenv-virtualenvwrapper` is a `pyenv` plugin to manage your `virtualenvs` with
 `virtualenvwrapper`. 
+
 
 Install the `pyenv-virtualenvwrapper`:
 ```bash
@@ -346,7 +351,6 @@ Additional Resources
 - [direnv](https://direnv.net)
 
 
-**Technical details:** `virtualenv` keeps each environment (and its installed modules) in separate folders; therefore, each is like a silo that doesn't interact with any other virtual environment. Usually, the exact file location is defined by the user, but we can use virtualenvwrapper to instead handle this for us.
 
 
 ## PostgreSQL setup 
