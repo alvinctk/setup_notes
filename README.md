@@ -49,11 +49,27 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## python setup 
 
+Follow the order of steps in order to setup Python.
+
+### Python build dependencies
+
+1. Install [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) before attempting to install a new Python
+   version.
+
+**Notes**: Highly recommend to install Python build dependencies before any
+installation with Python and its related modules. 
+
+```bash
+# optional, but recommended:
+brew install openssl readline sqlite3 xz zlib
+```
+
+
 ### `pyenv`
 [`pyenv`](https://github.com/pyenv/pyenv) stands for Python environment. `pyenv` lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
 According to the [pyenv guide](https://github.com/pyenv/pyenv#homebrew-on-macos): 
-1. Install `pyenv` via Homebrew by running:
+2. Install `pyenv` via Homebrew by running:
 
 ```bash
 brew install pyenv
@@ -64,7 +80,7 @@ like `brew install pyenv-virtualenv`, which we'll need later.
 **Technical details**: Every time you execute a Python script or use pip, pyenv works in the background to intercept that command and send it to the Python environment that is currently activated. It does this using shims on the PATH environment variable, which allow Python-related commands to be dynamically rerouted.
 
 
-2. Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility.
+3. Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility.
 
 For bash:
 ```bash
@@ -82,7 +98,7 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 ````
 
-3. Add pyenv init to your shell to enable shims and autocompletion. Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
+4. Add pyenv init to your shell to enable shims and autocompletion. Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
 
 ```bash
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
@@ -93,17 +109,9 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 
 **General warning**: There are some systems where the `BASH_ENV` variable is configured to point to `.bashrc`. On such systems you should almost certainly put the above mentioned line `eval "$(pyenv init -)"` into `.bash_profile`, and not into `.bashrc`. Otherwise you may observe strange behaviour, such as pyenv getting into an infinite loop. See [#264](https://github.com/pyenv/pyenv/issues/264) for details.
 
-4. Restart your shell so the path changes take effect. You can now begin using pyenv
+5. Restart your shell so the path changes take effect. You can now begin using pyenv
 ```bash
 exec "$SHELL"
-```
-
-5. Install [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) before attempting to install a new Python
-   version.
-
-```bash
-# optional, but recommended:
-brew install openssl readline sqlite3 xz zlib
 ```
 
 [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
