@@ -301,12 +301,23 @@ pipx install virtualenv
 
 **Technical details:** `virtualenv` keeps each environment (and its installed modules) in separate folders; therefore, each is like a silo that doesn't interact with any other virtual environment. Usually, the exact file location is defined by the user, but we can use virtualenvwrapper to instead handle this for us.
 
+
 ### pyenv plugin to manage virtual environment 
+
+[`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/)
+
+This helps pyenv and virtualenv gel like PB&J. With it, you can effectively switch between a single environment that has both the Python version and virtual environment wrapped in one bundle. **Make sure `pyenv` and `virtualenv` are installed before you install this wrapper**.
+
+
+Try using `pip` if no `pipx` 
+```bash
+pipx install virtualenvwrapper
+```
+
 `pyenv-virtualenvwrapper` is a `pyenv` plugin to manage your `virtualenvs` with
 `virtualenvwrapper`. 
 
-
-Install the `pyenv-virtualenvwrapper`:
+Then extend the usage of `pyenv` by install the `pyenv-virtualenvwrapper`:
 ```bash
 brew update
 brew install pyenv-virtualenvwrapper
