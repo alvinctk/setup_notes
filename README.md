@@ -59,6 +59,9 @@ Follow the order of steps in order to setup Python.
 
 ### Python build dependencies
 
+For `pyenv` to install Python correctly, required to install the Python build
+dependencies. 
+
 1. Install [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) before attempting to install a new Python
    version.
 
