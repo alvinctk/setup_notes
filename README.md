@@ -253,10 +253,10 @@ On macOS:
 brew install pipx 
 pipx ensurepath 
 ```
-And, upgrade pipx 
+And, upgrade `pipx` 
 
 ```bash
-brew update && brew upgrade `pipx`
+brew update && brew upgrade pipx
 ```
 
 Otherwise, install via `pip`
