@@ -114,6 +114,14 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 ```bash
 exec "$SHELL"
 ```
+6. Install Python version
+
+```bash
+pyenv install 3.9.1 #Install Python version 3.9.1
+pyenv install 3.7.2 #Install Python version 3.7.2
+pyenv versions # List all Python versions installed
+````
+
 
 [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
 
