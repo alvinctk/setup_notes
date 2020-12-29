@@ -29,10 +29,6 @@ Paste the following in a macOS Terminal or Linux shell prompt.
 https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-
-
-
-
 ## git setup
 
 ### Connecting to Github with ssh on MacOS 
@@ -166,11 +162,37 @@ git checkout v0.1.0
 ### pip 
 According to [pip manual](https://pip.pypa.io/en/stable/installing/#install-pip), pip is already installed if you are using Python 2 >=2.7.9 or PYthon 3 >= 3.4 downloaded from [python.org](python.org) or if you are working in a virtual environment created by virtualenv or venv. Just make sure to upgrade pip. 
 
-
 Check if pip is already installed: 
 ```bash
 python -m pip --version 
 ```
+
+
+### Installing pip with get-pip.py
+
+To manually install pip, securely 1 download get-pip.py by following this link: get-pip.py. Alternatively, use curl:
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+
+Then run the following command in the folder where you have downloaded get-pip.py:
+```bash
+python get-pip.py
+```
+
+### Upgrade setuptools and pip
+
+Setuptools can be updated via pip3, without having to re-brew Python 
+```bash
+python3 -m pip install --upgrade setuptools
+```
+
+pip3 can be used to upgrade itself via: 
+```bash
+python3 -m pip install --upgrade pip
+```
+
+
 
 ### pip install fails for every package
 According to [stackoverflow post](https://stackoverflow.com/questions/49748063/pip-install-fails-for-every-package-could-not-find-a-version-that-satisfies/49748494#49748494)
