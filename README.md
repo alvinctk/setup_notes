@@ -58,6 +58,11 @@ According to the [pyenv guide](https://github.com/pyenv/pyenv#homebrew-on-macos)
 ```bash
 brew install pyenv
 ````
+Also install [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv)
+like `brew install pyenv-virtualenv`, which we'll need later. 
+
+**Technical details**: Every time you execute a Python script or use pip, pyenv works in the background to intercept that command and send it to the Python environment that is currently activated. It does this using shims on the PATH environment variable, which allow Python-related commands to be dynamically rerouted.
+
 
 2. Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility.
 
