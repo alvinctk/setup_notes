@@ -127,6 +127,20 @@ pyenv install 3.9.1 #Install Python version 3.9.1
 pyenv install 3.7.2 #Install Python version 3.7.2
 pyenv versions # List all Python versions installed
 ````
+### Locating the Python Installation
+
+Each Python version is installed into its own directory under `$(pyenv root)/versions`.
+
+For example, you might have these versions installed:
+
+- `$(pyenv root)/versions/2.7.8/`
+- `$(pyenv root)/versions/3.9.1/`
+- `$(pyenv root)/versions/pypy-2.4.0/`
+
+As far as pyenv is concerned, version names are simply the directories in `$(pyenv root)/versions`.
+
+
+
 ### Uninstalling Python Versions 
 
 As time goes on, you will accumulate Python versions in your `$(pyenv root)/versions` directory.
