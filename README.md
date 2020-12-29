@@ -49,7 +49,7 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## python setup 
 This python setup guide use in part of the following:
-    
+
 - [A gist about python_environment.md](https://gist.github.com/wronk/a902185f5f8ed018263d828e1027009b#using-the-workflow)
 - [Homebrew Documentation on Python](https://docs.brew.sh/Homebrew-and-Python)
 - [Using pyenv to install and manage multiple python
