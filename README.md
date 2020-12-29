@@ -240,8 +240,53 @@ Lastly, to avoid other install errors, make sure you also upgrade setuptools aft
 ```bash
 pip install --upgrade setuptools
 ```
+### Install pipx 
 
+`pipx` enables you to
+- Expose CLI entrypoints of packages ("apps") installed to isolated environments with the install command. This guarantees no dependency conflicts and clean uninstalls!
+- Easily list, upgrade, and uninstall packages that were installed with pipx
+- Run the latest version of a Python application in a temporary environment with the `run` command
+- Best of all, pipx runs with regular user permissions, never calling `sudo pip install` (you aren't doing that, are you? 😄).
 
+On macOS:
+```bash
+brew install pipx 
+pipx ensurepath 
+```
+And, upgrade pipx 
+
+```bash
+brew update && brew upgrade `pipx`
+```
+
+Otherwise, install via `pip`
+
+```bath
+python3 -m pip install --user pipx 
+python3 -m pipx ensurepath
+```
+
+Upgrade `pip` :
+```bash
+python3 -m pip install --user -U pipx
+```
+
+Shell completions are available by the following instructions printed with this
+command.
+
+```bash
+pipx completions
+```
+
+### Install a package and its applications with pipx
+
+You can globally install an application by running 
+```bash
+pipx install PACKAGE
+```
+
+This automatically creates a virtual environment, installs the package, and adds the package's associated applications (entry points) to a location on your PATH. 
+For example, `pipx install pycowsay` makes the `pycowsay` command available globally, but sandboxes the pycowsay package in its own virtual environment. **`pipx` never needs to run as `sudo` to do this**.
 
 ## PostgreSQL setup 
 
