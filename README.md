@@ -50,7 +50,7 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ## python setup 
 
 ### `pyenv`
-`pyenv` stands for Python environment. `pyenv` lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
+[`pyenv`](https://github.com/pyenv/pyenv) stands for Python environment. `pyenv` lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
 According to the [pyenv guide](https://github.com/pyenv/pyenv#homebrew-on-macos): 
 1. Install `pyenv` via Homebrew by running:
