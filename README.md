@@ -100,7 +100,6 @@ exec "$SHELL"
 # optional, but recommended:
 brew install openssl readline sqlite3 xz zlib
 ```
-.
 
 [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
 
