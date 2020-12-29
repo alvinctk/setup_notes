@@ -287,6 +287,8 @@ pipx install PACKAGE
 This automatically creates a virtual environment, installs the package, and adds the package's associated applications (entry points) to a location on your PATH. 
 For example, `pipx install pycowsay` makes the `pycowsay` command available globally, but sandboxes the pycowsay package in its own virtual environment. **`pipx` never needs to run as `sudo` to do this**.
 
+## Setup Python Virtual Environment Settings
+
 ### virtualenv
 Short for "virtual environment." This manages separate directories for the modules you install (e.g., with `pip`). That way, each virtual environment can have it's own set of installed modules that is walled off from every other virtual environment so they don't interfere with each other. Like with `pyenv`, we'll switch virtual environments with virtualenvwrapper's `workon` command (as described later).
 
@@ -294,6 +296,55 @@ Install virtualenv. if no `pipx`, try `pip install virtualenv`
 ```bash
 pipx install virtualenv
 ```
+
+### pyenv plugin to manage virtual environment 
+`pyenv-virtualenvwrapper` is a `pyenv` plugin to manage your `virtualenvs` with
+`virtualenvwrapper`. 
+
+Install the `pyenv-virtualenvwrapper`:
+```bash
+brew update
+brew install pyenv-virtualenvwrapper
+```
+
+Append the following to `~/.bash_profile`:
+
+```bash
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME=$HOME/.virtualenvs
+pyenv virtualenvwrapper_lazy
+```
+Reload the shell:
+```bash
+source ~/.bash_profile
+```
+
+### Commmand usage
+
+Using `mkvirtualenv` to make a virtual environment `venv_test`
+```bash
+mkvirtualenv venv_test
+```
+
+Switch between virtual environment using `deactivate` and `workon` commands. 
+```bash
+deactivate
+workon venv_test
+(ven_test) $ 
+```
+
+Notes: 
+- `virtualenvwrapper_lazy` [decrease shell time](https://www.reddit.com/r/Python/comments/11e773/tip_virtualenvwrapper_has_a_lazy_version_you_can/)
+
+Additional Resources
+- [Real Python Primer on Virtual Environment](https://realpython.com/python-virtual-environments-a-primer/)
+- [virtualenvwrapper Command List](https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html)
+- [pyenv Command Reference](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md)
+- [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+- [direnv](https://direnv.net)
+
 
 **Technical details:** `virtualenv` keeps each environment (and its installed modules) in separate folders; therefore, each is like a silo that doesn't interact with any other virtual environment. Usually, the exact file location is defined by the user, but we can use virtualenvwrapper to instead handle this for us.
 
