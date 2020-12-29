@@ -56,7 +56,7 @@ This python setup guide use in part of the following:
   version](https://anil.io/blog/python/pyenv/using-pyenv-to-install-multiple-python-versions-tox/)
 - [tox automation project](https://pypi.org/project/tox/)
 - [tox documentation](https://tox.readthedocs.io/en/latest/)
-
+- [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
 
 Follow the order of steps in order to setup Python.
 
@@ -131,9 +131,35 @@ pyenv install 3.9.1 #Install Python version 3.9.1
 pyenv install 3.7.2 #Install Python version 3.7.2
 pyenv versions # List all Python versions installed
 ````
+### Uninstalling Python Versions 
 
+As time goes on, you will accumulate Python versions in your `$(pyenv root)/versions` directory.
 
-[virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
+To remove old Python versions, `pyenv uninstall` command to automate the removal process.
+
+Alternatively, simply `rm -rf` the directory of the version you want to remove. You can find the directory of a particular Python version with the `pyenv prefix` command, e.g. `pyenv prefix 2.6.8.`
+
+### Upgrading pyenv 
+
+If you've installed pyenv using homebrew, upgrade using:
+```bash
+brew upgrade pyenv
+```
+
+If you've installed pyenv using the instructions above, you can upgrade your installation at any time using git.
+
+To upgrade to the latest development version of pyenv, use git pull:
+```bash
+cd $(pyenv root)
+git pull
+```
+To upgrade to a specific release of pyenv, check out the corresponding tag:
+```bash
+cd $(pyenv root)
+git fetch
+git tag
+git checkout v0.1.0
+```
 
 
 
