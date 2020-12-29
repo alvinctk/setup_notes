@@ -277,7 +277,6 @@ command.
 ```bash
 pipx completions
 ```
-
 ### Install a package and its applications with pipx
 
 You can globally install an application by running 
@@ -287,6 +286,17 @@ pipx install PACKAGE
 
 This automatically creates a virtual environment, installs the package, and adds the package's associated applications (entry points) to a location on your PATH. 
 For example, `pipx install pycowsay` makes the `pycowsay` command available globally, but sandboxes the pycowsay package in its own virtual environment. **`pipx` never needs to run as `sudo` to do this**.
+
+### virtualenv
+Short for "virtual environment." This manages separate directories for the modules you install (e.g., with `pip`). That way, each virtual environment can have it's own set of installed modules that is walled off from every other virtual environment so they don't interfere with each other. Like with `pyenv`, we'll switch virtual environments with virtualenvwrapper's `workon` command (as described later).
+
+Install virtualenv. if no `pipx`, try `pip install virtualenv`
+```bash
+pipx install virtualenv
+```
+
+**Technical details:** `virtualenv` keeps each environment (and its installed modules) in separate folders; therefore, each is like a silo that doesn't interact with any other virtual environment. Usually, the exact file location is defined by the user, but we can use virtualenvwrapper to instead handle this for us.
+
 
 ## PostgreSQL setup 
 
