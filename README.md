@@ -416,7 +416,7 @@ export VIRTUALENVWRAPPER_PYTHON=/Users/alvin/.pyenv/shims/python3
 Locate the path of `virtualenvwrapper.sh`
 ```bash
 $> pyenv which virtualenvwrapper.sh 
-/Users/alvin/.local/bin/virtualenvwrapper.sh
+/Users/alvin/.pyenv/versions/3.9.1/bin/virtualenvwrapper.sh
 ```
 Add the following to `~/.bash_profile`:
 ```bash
@@ -441,6 +441,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
+
+pyenv virtualenvwrapper_lazy
 ```
 ### 2. On startup, macOS terminal fails to load `eval "$(pyenv init -)"`
 
