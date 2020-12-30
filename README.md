@@ -363,11 +363,40 @@ Notes:
 ## Troubleshooting Python Environment setup issues
 
 ### 1. Error finding `virtualenvwrapper.hook_loader`
+
 ```bash
 Error while finding spec for 'virtualenvwrapper.hook_loader' (<class 'ImportError'>: No module named 'virtualenvwrapper')
 virtualenvwrapper.sh: There was a problem running the initialization hooks.
 ```
+The solution also fixed cannot switch python version with `pyenv` using `pyenv
+shell` command. 
 
+The solution requires the understanding on [how pyenv works](https://mungingdata.com/python/how-pyenv-works-shims/). 
+
+Background to the problem: **`pyenv` changes `PATH`**
+`pyenv` adds this code to the `~/.bash_profile` which changes the `PATH`.
+
+```bash
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+```
+Run `echo $PATH` to see the `PATH` is different now: 
+```bash
+/Users/alvin/.pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+```
+
+`/Users/alvin/.pyenv/shims` has been added before all other directories in the
+`PATH`. 
+
+All terminal commands will go through `/Users/alvin/.pyenv/shims` first now.
+This allows pyenv to "intercept" any relevant Python commands. 
+
+- The `python` command will go to `/Users/alvin/.pyenv/shims/python`
+- The `pip` command will go to `/Users/alvin/.pyenv/shims/pip`
+
+**The solution uses the correct path to resolve the issues, and the solution are
+follows**:
 ```bash
 $> which -a python 
 /Users/alvin/.pyenv/shims/python
@@ -420,7 +449,6 @@ To fix, add the following to `~/.bashrc`:
 if [ -f ~/.bash_profile ]; then
   . ~/.bash_profile
 fi
-
 
 ```
 
