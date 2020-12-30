@@ -362,7 +362,7 @@ Notes:
 
 ## Troubleshooting Python Environment setup issues
 
-1. Error finding `virtualenvwrapper.hook_loader`
+### 1. Error finding `virtualenvwrapper.hook_loader`
 ```bash
 Error while finding spec for 'virtualenvwrapper.hook_loader' (<class 'ImportError'>: No module named 'virtualenvwrapper')
 virtualenvwrapper.sh: There was a problem running the initialization hooks.
@@ -410,7 +410,19 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 ```
+### 2. On startup, macOS terminal fails to load `eval "$(pyenv init -)"`
 
+`~/.bash_profile` is not sourced when terminal is start up. 
+
+To fix, add the following to `~/.bashrc`:
+
+```bash
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+fi
+
+
+```
 
 
 
