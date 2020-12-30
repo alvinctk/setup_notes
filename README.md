@@ -59,8 +59,8 @@ Follow the order of steps in order to setup Python.
 
 ### Python build dependencies
 
-For `pyenv` to install Python correctly, required to install the Python build
-dependencies. 
+<a name="install_pyenv">For `pyenv` to install Python correctly, required to install the Python build
+dependencies.</a>
 
 1. Install [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) before attempting to install a new Python
    version.
@@ -288,6 +288,11 @@ This automatically creates a virtual environment, installs the package, and adds
 For example, `pipx install pycowsay` makes the `pycowsay` command available globally, but sandboxes the pycowsay package in its own virtual environment. **`pipx` never needs to run as `sudo` to do this**.
 
 ## Setup Python Virtual Environment Settings
+
+### pyenv
+`pyenv` is required before installing `virtualenv`. <a href="install_pyenv">See above installing
+`pyenv`.</a>
+
 
 ### [`virtualenv`](https://virtualenv.pypa.io/en/stable/)
 Short for "virtual environment." This manages separate directories for the modules you install (e.g., with `pip`). That way, each virtual environment can have it's own set of installed modules that is walled off from every other virtual environment so they don't interfere with each other. Like with `pyenv`, we'll switch virtual environments with virtualenvwrapper's `workon` command (as described later).
