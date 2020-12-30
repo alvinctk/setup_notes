@@ -290,7 +290,7 @@ For example, `pipx install pycowsay` makes the `pycowsay` command available glob
 ## Setup Python Virtual Environment Settings
 
 ### pyenv
-`pyenv` is required before installing `virtualenv`. <a href="install_pyenv">See above installing
+`pyenv` is required before installing `virtualenv`. <a href="#install_pyenv">See above installing
 `pyenv`.</a>
 
 
