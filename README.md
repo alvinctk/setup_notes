@@ -301,9 +301,11 @@ Short for "virtual environment." This manages separate directories for the modul
 
 
 Install virtualenv. If no `pipx`, try `pip install virtualenv`
+<code class="language-plaintext highlighter-rouge">
 ```bash
 pipx install virtualenv
 ```
+</code>
 
 **Technical details:** `virtualenv` keeps each environment (and its installed modules) in separate folders; therefore, each is like a silo that doesn't interact with any other virtual environment. Usually, the exact file location is defined by the user, but we can use virtualenvwrapper to instead handle this for us.
 
