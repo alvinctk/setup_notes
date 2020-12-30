@@ -331,10 +331,10 @@ brew install pyenv-virtualenvwrapper
 Append the following to `~/.bash_profile`:
 
 ```bash
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export WORKON_HOME=$HOME/.virtualenvs
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 pyenv virtualenvwrapper_lazy
 ```
 Reload the shell:
