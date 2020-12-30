@@ -43,6 +43,17 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 4. [Using SSH authentication on terminal](https://gist.github.com/ddeveloperr/1859fd395e7cb5832c59)
 
+## Do **NOT** install Python from python.org
+
+It seems pretty obvious that you should install Python using the installer from Python’s official website.
+
+The problem with this is that Python installs itself in a place that is difficult to manage without using administrator (i.e., sudo) privileges. 
+This is okay for beginners, or people who only touch Python every so often. 
+However, for my use cases, where I’m testing my code in multiple versions of Python, and have [multiple virtual environments](https://docs.python.org/3/tutorial/venv.html), this becomes bad news.
+
+## Do **Not** install Python from `brew install python3`
+
+
 ## python setup 
 This python setup guide use in part of the following:
 
@@ -53,16 +64,6 @@ This python setup guide use in part of the following:
 - [tox automation project](https://pypi.org/project/tox/)
 - [tox documentation](https://tox.readthedocs.io/en/latest/)
 - [virtualenv installation](https://virtualenv.pypa.io/en/stable/installation.html)
-
-Do **NOT** install Python from python.org
-
-It seems pretty obvious that you should install Python using the installer from Python’s official website.
-
-The problem with this is that Python installs itself in a place that is difficult to manage without using administrator (i.e., sudo) privileges. 
-This is okay for beginners, or people who only touch Python every so often. 
-However, for my use cases, where I’m testing my code in multiple versions of Python, and have [multiple virtual environments](https://docs.python.org/3/tutorial/venv.html), this becomes bad news.
-
-Do **Not** install Python from `brew install python3`
 
 
 Follow the order of steps in order to setup Python.
