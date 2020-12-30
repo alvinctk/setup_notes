@@ -359,6 +359,61 @@ workon venv_test
 Notes: 
 - `virtualenvwrapper_lazy` [decrease shell time](https://www.reddit.com/r/Python/comments/11e773/tip_virtualenvwrapper_has_a_lazy_version_you_can/)
 
+
+## Troubleshooting Python Environment setup issues
+
+1. Error finding `virtualenvwrapper.hook_loader`
+```bash
+Error while finding spec for 'virtualenvwrapper.hook_loader' (<class 'ImportError'>: No module named 'virtualenvwrapper')
+virtualenvwrapper.sh: There was a problem running the initialization hooks.
+```
+
+```bash
+$> which -a python 
+/Users/alvin/.pyenv/shims/python
+/usr/bin/python
+```
+Select the first path which is `/Users/alvin/.pyenv/shims/python` or
+`~/.pyenv/shims/python`. 
+
+Add the following to `~/.bash_profile`:
+```bash
+export VIRTUALENVWRAPPER_PYTHON=/Users/alvin/.pyenv/shims/python3
+```
+
+Locate the path of `virtualenvwrapper.sh`
+```bash
+$> pyenv which virtualenvwrapper.sh 
+/Users/alvin/.local/bin/virtualenvwrapper.sh
+```
+Add the following to `~/.bash_profile`:
+```bash
+source /Users/alvin/.local/bin/virtualenvwrapper.sh
+```
+
+The order of addition of fixes into `~/.bash_profile`
+```bash
+export PATH="$PATH:/Users/alvin/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export VIRTUALENVWRAPPER_PYTHON=/Users/alvin/.pyenv/shims/python3
+
+# for virtualenv, Tell pyenv-virtualenvwrapper ti use pyenv when creating new Python environments
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+# Setup virtualenv home
+export WORKON_HOME=$HOME/.virtualenvs
+source ~/.local/bin/virtualenvwrapper.sh
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+eval "$(pyenv virtualenv-init -)"
+```
+
+
+
+
 Additional Resources
 - [Real Python Primer on Virtual Environment](https://realpython.com/python-virtual-environments-a-primer/)
 - [virtualenvwrapper Command List](https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html)
