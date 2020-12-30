@@ -373,6 +373,9 @@ shell` command.
 
 The solution requires the understanding on [how pyenv works](https://mungingdata.com/python/how-pyenv-works-shims/). 
 
+Stackoverflow reference: [1](https://stackoverflow.com/questions/33216679/usr-bin-python3-error-while-finding-spec-for-virtualenvwrapper-hook-loader)
+
+
 Background to the problem: **`pyenv` changes `PATH`**
 `pyenv` adds this code to the `~/.bash_profile` which changes the `PATH`.
 
