@@ -57,7 +57,7 @@ This python setup guide use in part of the following:
 Follow the order of steps in order to setup Python.
 
 
-### Python build dependencies
+## Python build dependencies
 
 <a name="install_pyenv">For `pyenv` to install Python correctly, required to install the Python build
 dependencies.</a>
@@ -74,7 +74,7 @@ brew install openssl readline sqlite3 xz zlib
 ```
 
 
-### `pyenv`
+## Install Python using `pyenv`
 [`pyenv`](https://github.com/pyenv/pyenv) stands for Python environment. `pyenv` lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
 According to the [pyenv guide](https://github.com/pyenv/pyenv#homebrew-on-macos): 
@@ -175,6 +175,7 @@ git checkout v0.1.0
 ```
 
 
+## Install Python package manager and setup tools 
 
 ### pip 
 According to [pip manual](https://pip.pypa.io/en/stable/installing/#install-pip), pip is already installed if you are using Python 2 >=2.7.9 or PYthon 3 >= 3.4 downloaded from [python.org](python.org) or if you are working in a virtual environment created by virtualenv or venv. Just make sure to upgrade pip. 
