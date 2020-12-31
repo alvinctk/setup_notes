@@ -340,6 +340,14 @@ brew update
 brew install pyenv-virtualenvwrapper
 ```
 
+`eval "$(pyenv virtualenv-init -)"` is configured in your shell
+`~/.bash_profile`, `pyenv-virtualenv` will automatically activate/deactivate
+virtualenvs on entering/leaving directories which contain a `.python-version`
+file that contains the name of a valid virtual environment. `.python-version`
+files are used `pyenv` to denote local Python versions and can be created and
+deleted with `pyenv local` command. 
+
+
 Append the following to `~/.bash_profile`:
 
 ```bash
@@ -468,6 +476,8 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 ```
+## Workflow of Python Virtual Environment
+
 
 
 
