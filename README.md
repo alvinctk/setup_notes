@@ -348,6 +348,8 @@ files are used `pyenv` to denote local Python versions and can be created and
 deleted with `pyenv local` command. 
 
 
+`virtualenvwrapper_lazy` [decrease shell time](https://www.reddit.com/r/Python/comments/11e773/tip_virtualenvwrapper_has_a_lazy_version_you_can/)
+
 Append the following to `~/.bash_profile`:
 
 ```bash
@@ -375,10 +377,6 @@ deactivate
 workon venv_test
 (ven_test) $ 
 ```
-
-Notes: 
-- `virtualenvwrapper_lazy` [decrease shell time](https://www.reddit.com/r/Python/comments/11e773/tip_virtualenvwrapper_has_a_lazy_version_you_can/)
-
 
 ## Troubleshooting Python Environment setup issues
 
