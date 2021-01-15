@@ -43,6 +43,16 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 4. [Using SSH authentication on terminal](https://gist.github.com/ddeveloperr/1859fd395e7cb5832c59)
 
+To see your repo URL, run:
+```bash
+git remote show origin
+```
+https://github.com/username/reponame.git
+
+To use ssh, you have to change repo URL, do the following:
+```bash
+git remote set-url origin git+ssh://git@github.com/username/reponame.git
+```s
 ## Do **NOT** install Python from python.org
 
 It seems pretty obvious that you should install Python using the installer from Python’s official website.
