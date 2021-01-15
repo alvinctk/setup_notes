@@ -52,7 +52,7 @@ https://github.com/username/reponame.git
 To use ssh, you have to change repo URL, do the following:
 ```bash
 git remote set-url origin git+ssh://git@github.com/username/reponame.git
-```s
+```
 ## Do **NOT** install Python from python.org
 
 It seems pretty obvious that you should install Python using the installer from Python’s official website.
