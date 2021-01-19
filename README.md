@@ -29,6 +29,90 @@ Paste the following in a macOS Terminal or Linux shell prompt.
 https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+## [Upgrade bash in macOS tutorial](https://www.shell-tips.com/mac/upgrade-bash/):
+[quote="gosaints, post:1, topic:550289"]
+Mac OS is installed with an older version of Bash
+[/quote]
+
+Due to licensing issues, macOS shows a bash version 3.2.
+
+```bash
+$> bash --version
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin20)
+Copyright (C) 2007 Free Software Foundation, Inc.
+````
+
+> Newer versions of macOS (Starting from Catalina) now users `zsh` as default instead of `bash`. 
+
+#### Install the required `homebrew` 
+> ```bash
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+>  ```
+
+#### Install bash updated version via homebrew
+```bash
+brew install bash
+```
+
+#### Reload bash into a new shell
+```bash
+exec bash
+```
+
+> ⚠️ **Be careful:** Your old bash 3 version would still be installed in `/bin/bash` while the brew version would be in `/usr/local/bin/bash` . You can check which version you are using with `echo $SHELL` or `which bash` . 
+
+#### Check `bash` version 
+```bash
+$> bash --version
+GNU bash, version 5.1.4(1)-release (x86_64-apple-darwin20.2.0)
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+```
+
+#### Bash version not updated
+
+If you do not see the updated version, your path environment variable might need some rework. 
+
+Reload bash with full path into a new shell
+```bash
+exec $(echo $(brew --prefix)/bin/bash)  
+```
+
+#### Change default bash on macOS
+
+First, update the list of permitted shell by adding the bash brew version into `/private/etc/shells`. 
+```bash
+$> echo $(brew --prefix)/bin/bash | sudo tee -a /private/etc/shells
+/usr/local/bin/bash
+```
+
+To check `/usr/local/bin/bash` has been added to `/private/etc/shells`
+```bash
+$> cat /private/etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+/usr/local/bin/bash
+```
+
+
+Finally, update your user's shell with `chpass` command line. 
+```bash
+$> sudo chpass -s /usr/local/bin/bash alvin
+Changing shell for alvin.
+```
+
+> Alternatively, instead of using `chpass` , you can go to the Menu > `System Preferences...` > `Users & Groups` . Unlock the pane, control click on your user to select `Advanced Options...` , then update the `Login shell` to `/usr/local/bin/bash`
+
+ 
+
 ## git setup
 
 ### Connecting to Github with ssh on MacOS 
