@@ -30,10 +30,6 @@ https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ## [Upgrade bash in macOS tutorial](https://www.shell-tips.com/mac/upgrade-bash/):
-[quote="gosaints, post:1, topic:550289"]
-Mac OS is installed with an older version of Bash
-[/quote]
-
 Due to licensing issues, macOS shows a bash version 3.2.
 
 ```bash
