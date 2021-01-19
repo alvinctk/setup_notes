@@ -111,7 +111,31 @@ Changing shell for alvin.
 
 > Alternatively, instead of using `chpass` , you can go to the Menu > `System Preferences...` > `Users & Groups` . Unlock the pane, control click on your user to select `Advanced Options...` , then update the `Login shell` to `/usr/local/bin/bash`
 
- 
+
+## bash setting on macOS
+For `bash`, you need to have the following files on macOS:
+
+* `~/.bashrc` to initialize the bash interactive shell session. 
+* `~/.bash_profile` to load the path variables 
+* `~/.profile` for non-interactive shell session for commands
+
+
+
+## Use correct command utilities program and documentation
+
+There's a big differences in how a command is used based on either Linux (GNU) or macOS (BSD) version of the command utilities.  
+
+`awk`, `grep`, `sed` in macOS most likely are BSD version. 
+
+In most tutorial you find online including DataQuest are based on GNU command utilities. 
+
+Regardless of whether you used BSD or GNU command utilities, ensure you use the right (BSD or GNU) documentation. 
+
+## Install GNU core command line utilities on macOS 
+[Guide to install GNU core utilities](https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities): 
+```
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+``` 
 
 ## git setup
 
