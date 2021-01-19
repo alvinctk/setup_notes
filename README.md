@@ -41,9 +41,9 @@ Copyright (C) 2007 Free Software Foundation, Inc.
 > Newer versions of macOS (Starting from Catalina) now users `zsh` as default instead of `bash`. 
 
 #### Install the required `homebrew` 
-> ```bash
-> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
->  ```
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 #### Install bash updated version via homebrew
 ```bash
