@@ -601,7 +601,16 @@ Additional Resources
 - [direnv](https://direnv.net)
 
 
+## Node.js 
 
+Install `yarn` through homebrew package manager. 
+
+This will also install `Node.js` if it is not installed.
+
+Check that `yarn` is installed by running
+```bash
+yarn --version
+```
 
 ## PostgreSQL setup 
 
