@@ -603,7 +603,27 @@ Additional Resources
 
 ## Node.js 
 
+Install Node and `npm`
+```bash
+brew install node
+```
+> [More details on how to install NodeJS on macOS using homebrew](https://dyclassroom.com/howto-mac/how-to-install-nodejs-and-npm-on-mac-using-homebrew).
+
+
+Check version of node
+```bash
+node -v
+```
+
+Check version of npm 
+```bash
+npm -v
+```
+
 Install `yarn` through homebrew package manager. 
+```bash
+brew install yarn
+```
 
 This will also install `Node.js` if it is not installed.
 
@@ -611,6 +631,20 @@ Check that `yarn` is installed by running
 ```bash
 yarn --version
 ```
+
+Install Bower - a package manager for the web
+```bash
+npm install -g bower
+```
+`-g` will install `bower` globally in your system
+
+Check version of bower
+```bash
+bower -v
+```
+
+
+
 
 ## PostgreSQL setup 
 
