@@ -632,18 +632,30 @@ Check that `yarn` is installed by running
 yarn --version
 ```
 
+Make sure npm is up to date
+```bash
+sudo npm update -g npm
+```
+> Updates npm globally on your system. You may need `sudo` if you don't have
+> permission. 
+
+
 Install Bower - a package manager for the web
 ```bash
 npm install -g bower
 ```
-`-g` will install `bower` globally in your system
+> `-g` will install `bower` globally in your system
 
 Check version of bower
 ```bash
 bower -v
 ```
 
-
+Install Grunt 
+```bash
+npm install -g grunt-cli 
+```
+> `-g` will install `grunt` globally and put `grunt` in the system path
 
 
 ## PostgreSQL setup 
