@@ -698,3 +698,25 @@ brew services list
 [Starting and Stopping Background Services with Homebrew](https://thoughtbot.com/blog/starting-and-stopping-background-services-with-homebrew)
 
 [Installing Postgres via Brew](https://gist.github.com/sgnl/609557ebacd3378f3b72)
+
+
+`/usr/bin/clang` failed with exit code 1 when installing psycopg2 
+`xcrun: error: invalid active developer path /Libarary/Developer/CommandLine
+Tools` - [Solution for error after macOS update](https://stackoverflow.com/questions/52522565/git-is-not-working-after-macos-update-xcrun-error-invalid-active-developer-pa)
+
+Did the following on bash terminal 
+```
+xcode-select install 
+sudo xcode-select --reset 
+brew reinstall openssl 
+
+```
+
+[In venv](https://stackoverflow.com/questions/39767810/cant-install-psycopg2-package-through-pip-install-is-this-because-of-sierra/39800677#39800677)
+```
+env LDFLAGS='-L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib' pip install psycopg2==2.8.4
+
+```
+[Other solution to install psycopg2](https://stackoverflow.com/questions/59206956/install-psycopg2-failed-on-macos)
+
+
